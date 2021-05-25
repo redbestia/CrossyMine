@@ -47,10 +47,10 @@ namespace CrossyOwl
         private void Update()
         {
             //Get user input - has to happen in Update
-            if (Input.GetKey(KeyCode.UpArrow)) _inputDir = new Vector3Int(1, 0, 0);
-            else if (Input.GetKey(KeyCode.DownArrow)) _inputDir = new Vector3Int(-1,0,0);
-            else if (Input.GetKey(KeyCode.RightArrow)) _inputDir = new Vector3Int(0, 0, -1);
-            else if (Input.GetKey(KeyCode.LeftArrow)) _inputDir = new Vector3Int(0, 0, 1);
+            if (Input.GetKey(KeyCode.UpArrow)) _inputDir = new Vector3Int(0, 0, 1);
+            else if (Input.GetKey(KeyCode.DownArrow)) _inputDir = new Vector3Int(0,0,-1);
+            else if (Input.GetKey(KeyCode.RightArrow)) _inputDir = new Vector3Int(1, 0, 0);
+            else if (Input.GetKey(KeyCode.LeftArrow)) _inputDir = new Vector3Int(-1, 0, 0);
             else _inputDir = Vector3Int.zero;
             
         }

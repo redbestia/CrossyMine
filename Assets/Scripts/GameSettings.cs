@@ -23,6 +23,6 @@ public class GameSettings : MonoBehaviour
     }
     static GameSettings _instance;
 
-    public readonly float GridSize = 1.062f;
+    public readonly float GridSize = 2f;
     public readonly string ObstacleTag = "Obstacle";
 }
