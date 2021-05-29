@@ -75,16 +75,16 @@ namespace CrossyOwl
             }
         }
 
-        private void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.tag == GameSettings.Instance.ObstacleTag ||
-                collision.gameObject.transform.parent.tag == GameSettings.Instance.ObstacleTag)
-            {
-                Debug.Log("Hit Obstacle!");
-                ReflectJump();
-                if (Obstacle != null) Obstacle();
-            }
-        }
+        //private void OnCollisionEnter(Collision collision)
+        //{
+        //    if (collision.gameObject.tag == GameSettings.Instance.ObstacleTag ||
+        //        collision.gameObject.transform.parent.tag == GameSettings.Instance.ObstacleTag)
+        //    {
+        //        Debug.Log("Hit Obstacle!");
+        //        ReflectJump();
+        //        if (Obstacle != null) Obstacle();
+        //    }
+        //}
         #endregion
 
         /// <summary>

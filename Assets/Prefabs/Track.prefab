@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 3300306873232817052}
   - component: {fileID: 3200270152335379869}
   - component: {fileID: 7363996862227409492}
+  - component: {fileID: 9041942725164201954}
   m_Layer: 0
   m_Name: Wood
   m_TagString: Untagged
@@ -111,6 +112,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &9041942725164201954
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4282585765965715485}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3623288, y: 1.7371117, z: 0.13952234}
+  m_Center: {x: -0.97751534, y: -0.00000011920932, z: 0}
 --- !u!1 &7551189139626943221
 GameObject:
   m_ObjectHideFlags: 0
