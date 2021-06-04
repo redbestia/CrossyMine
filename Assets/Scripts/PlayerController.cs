@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using Vector3 = UnityEngine.Vector3;
 
-namespace CrossyOwl
+namespace CrossyMine
 {
     /// <summary>
     /// Grid movement player controller 
