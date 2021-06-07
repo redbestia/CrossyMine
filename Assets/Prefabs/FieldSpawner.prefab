@@ -45,3 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
   _field: {fileID: 6652600733069324728, guid: 68880ec7a187ea145bc39334baf632f3, type: 3}
+  _difBetwenSpawnerAndCamera: 20

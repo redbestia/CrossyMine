@@ -7,7 +7,7 @@ public class FiledSpowner : MonoBehaviour
     [SerializeField, Tooltip("Reference Camera")] private GameObject _camera;
     [SerializeField, Tooltip("Field Prefab")] private GameObject _field;
     Vector3 _moveVector = new Vector3(0.0f,0.0f,20.0f);
-    float _difBetwenSpawnerAndCamera = 10;
+    public float _difBetwenSpawnerAndCamera;
     private void Update()
     {
         FallowCamera();
