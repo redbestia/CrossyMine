@@ -12,13 +12,7 @@ public class EnemyMovement : MonoBehaviour
     Rigidbody _rigidbody;
 
     Transform _transform;
-    private void BackToStart()
-    {
-        if (_startPoint >= _transform.position.x)
-            _transform.position = _transform.position + new Vector3(_backPoints, 0, 0);
-        else
-            _transform.position = _transform.position - new Vector3(_backPoints, 0, 0);
-    }
+   
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -36,5 +30,12 @@ public class EnemyMovement : MonoBehaviour
     {
         if (_transform.position.x > _startPoint + _backPoints || _transform.position.x < _startPoint - _backPoints)
             BackToStart();
+    }
+    private void BackToStart()
+    {
+        if (_startPoint >= _transform.position.x)
+            _transform.position = _transform.position + new Vector3(_backPoints, 0, 0);
+        else
+            _transform.position = _transform.position - new Vector3(_backPoints, 0, 0);
     }
 }

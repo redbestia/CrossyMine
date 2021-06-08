@@ -25,4 +25,6 @@ public class GameSettings : MonoBehaviour
 
     public readonly float GridSize = 2f;
     public readonly string ObstacleTag = "Obstacle";
+    
+    //[SerializeField, Tooltip("Distance Beetwen Side Rokcs And Middle")] public float Distance;
 }

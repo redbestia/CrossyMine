@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1606717743654992091}
   - component: {fileID: 6226745536720858159}
   - component: {fileID: 2491307636442834241}
+  - component: {fileID: 2532211000192910024}
   m_Layer: 0
   m_Name: One square.004
   m_TagString: Obstacle
@@ -79,3 +80,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &2532211000192910024
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6969373581527936664}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2.0000005, z: 2.0000005}
+  m_Center: {x: 0, y: 0, z: 0}
