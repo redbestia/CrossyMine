@@ -34,7 +34,7 @@ namespace CrossyMine
                     _fullRockCheck += 1;
                 }
             }
-            if (_fullRockCheck == 7) RandomNumersForRocks[Random.Range(0, 7)] = 0;
+            if (_fullRockCheck == 7) RandomNumersForRocks[Random.Range(0,  (int)distance-1)] = 0;
             return RandomNumersForRocks;
         }
         

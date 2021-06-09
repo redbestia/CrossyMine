@@ -108,7 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 100
-  _backPoints: 44
+  _maxTop: -28
+  _maxDown: 18
+  _topOrDown: 0
 --- !u!54 &-7856571610477094395
 Rigidbody:
   m_ObjectHideFlags: 0

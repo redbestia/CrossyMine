@@ -5,26 +5,27 @@ using UnityEngine;
 /// <summary>
 /// Class holding the game tuning properties
 /// </summary>
-public class GameSettings : MonoBehaviour
+namespace CrossyMine
 {
-    /// <summary>
-    /// Singleton implementation
-    /// </summary>
-    public static GameSettings Instance 
-    { 
-        get 
+    public class GameSettings : MonoBehaviour
+    {
+        /// <summary>
+        /// Singleton implementation
+        /// </summary>
+        public static GameSettings Instance
         {
-            if (_instance == null)
+            get
             {
-                _instance = Camera.main.gameObject.AddComponent<GameSettings>();
+                if (_instance == null)
+                {
+                    _instance = Camera.main.gameObject.AddComponent<GameSettings>();
+                }
+                return _instance;
             }
-            return _instance;
         }
-    }
-    static GameSettings _instance;
+        static GameSettings _instance;
 
-    public readonly float GridSize = 2f;
-    public readonly string ObstacleTag = "Obstacle";
-    
-    //[SerializeField, Tooltip("Distance Beetwen Side Rokcs And Middle")] public float Distance;
+        public readonly float GridSize = 2f;
+        public readonly string ObstacleTag = "Obstacle";
+    }
 }
