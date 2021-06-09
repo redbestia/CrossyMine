@@ -6,11 +6,11 @@ namespace CrossyMine
 {
     public class ObstacleListScript : MonoBehaviour
     {
-        public List<GameObject> _obstacleListToStatic;
+        public List<GameObject> obstacleListToStatic;
         public static List<GameObject> obstacleList;
             private void Awake()
         {
-            obstacleList = _obstacleListToStatic;
+            obstacleList = obstacleListToStatic;
         }
     }
 }

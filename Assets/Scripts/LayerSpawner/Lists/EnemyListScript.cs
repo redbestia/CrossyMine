@@ -6,6 +6,13 @@ namespace CrossyMine
 {
     public class EnemyListScript : MonoBehaviour
     {
-        public GameObject[] enemyList;
+        public List<GameObject> enemyListToStatic;
+        public static List<GameObject> enemyList;
+
+        private void Awake()
+        {
+            enemyList = enemyListToStatic;
+        }
+
     }
 }
