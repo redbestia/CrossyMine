@@ -234,5 +234,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d55daa67e4bbbec4ebc79fab9d25600c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _verticalJumpForce: 100
+  _verticalJumpForce: 75
   _horizontalSpeed: 10

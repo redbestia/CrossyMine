@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 3765017522314277184}
   - component: {fileID: -7801321248795744098}
   - component: {fileID: -7856571610477094395}
+  - component: {fileID: 1367878537865954057}
+  - component: {fileID: -9038973834593718037}
   m_Layer: 0
   m_Name: Roling Rock
   m_TagString: Enemy
@@ -111,6 +113,8 @@ MonoBehaviour:
   _maxTop: -28
   _maxDown: 18
   _topOrDown: 0
+  minEnemySpeed: 300
+  maxEnemySpeed: 500
 --- !u!54 &-7856571610477094395
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,3 +131,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &1367878537865954057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090732331952968893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc75aa8adf05b5b4db1ba4f2f359a3d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagScript: RollingRock
+--- !u!114 &-9038973834593718037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090732331952968893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01112ef7f4883404a91bdb070f2c033c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tracks: {fileID: 7971229138512268417, guid: 6e629c329c9228c498570cde9c86e274, type: 3}
+  spawnTracks: 0
+  minSpawn: 1
+  maxSpawn: 4
+  minDistance: 5
+  maxDistance: 15

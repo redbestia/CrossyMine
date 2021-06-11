@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: -4787772731765177242}
   - component: {fileID: 397821390080854419}
   - component: {fileID: -2338486985206690546}
+  - component: {fileID: -5074559195355500045}
+  - component: {fileID: 4452221256356441372}
   m_Layer: 0
   m_Name: Huge Monster 1
   m_TagString: Enemy
@@ -98,6 +100,8 @@ MonoBehaviour:
   _maxTop: -32
   _maxDown: 28
   _topOrDown: 0
+  minEnemySpeed: 200
+  maxEnemySpeed: 400
 --- !u!54 &397821390080854419
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,3 +131,34 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 12.807824, y: 1.5505345, z: 1.5505333}
   m_Center: {x: 5.4210367, y: 0.00000093172036, z: -1.032919}
+--- !u!114 &-5074559195355500045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899573692009144292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc75aa8adf05b5b4db1ba4f2f359a3d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagScript: Monster
+--- !u!114 &4452221256356441372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899573692009144292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01112ef7f4883404a91bdb070f2c033c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tracks: {fileID: 7971229138512268417, guid: 6e629c329c9228c498570cde9c86e274, type: 3}
+  spawnTracks: 0
+  minSpawn: 1
+  maxSpawn: 2
+  minDistance: 15
+  maxDistance: 25

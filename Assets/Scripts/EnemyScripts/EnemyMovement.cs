@@ -7,7 +7,9 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField, Tooltip("EnemySpeed")] public float _speed = 1f;
     [SerializeField, Tooltip("Max Point Top")] float _maxTop;
     [SerializeField, Tooltip("Max Point Down")] float _maxDown;
-    [SerializeField, Tooltip("Yes =going top No= going down")] public bool _topOrDown;
+    [SerializeField, Tooltip("Yes =going top No= going down")] public bool _topOrDown; 
+    public int minEnemySpeed;
+    public int maxEnemySpeed;
     Rigidbody _rigidbody;
 
     private void Awake()
@@ -22,9 +24,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        BackToStartIdRequired(); 
+        BackToStartIfRequired(); 
     }
-    private void BackToStartIdRequired()
+    private void BackToStartIfRequired()
     {
         if (_topOrDown) BackToStartTop();
         else BackToStartDown();

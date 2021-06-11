@@ -14,6 +14,7 @@ namespace CrossyMine
         InsideRocksCreator _insideRocksCreator;
         EnemySpawner _enemySpawner;
         int _layerCounter = 1;
+        int _switchCase;
 
         private void Awake()
         {
@@ -23,26 +24,63 @@ namespace CrossyMine
         }
         private void Update()
         {
-            SpawnMoveSpawner();        }
+            SpawnMoveSpawner();
+        }
 
         void SpawnMoveSpawner()
         {
             if (transform.position.z < _camera.transform.position.z + _difBetwenSpawnerAndCamera)
             {
-
-                if (_layerCounter % 3 == 0)
-                {
-                    _insideRocksCreator.CreateInsideRocks();
-                    _sideRockCreator.CreateSideRocks();
-                }
-                if (_layerCounter % 3 == 1) _enemySpawner.SpawnEnemy();
-                if (_layerCounter % 3 == 2) _sideRockCreator.CreateSideRocks();
-                
-                _layerCounter++;
-                transform.position += _moveVector;
+                SafeStartOrNoramlSpawn();
+                SwitchWhatLayerSpawn();
+                AddToLayerCounter();
+                MoveSpawnerForward();
 
             }
         }
+        void SafeStartOrNoramlSpawn()
+        {
+            if (_layerCounter <= 5)
+            {
+                _switchCase = 2;
+            }
+            else
+            {
+                if (_switchCase == 0)
+                {
+                    _switchCase = Random.Range(1, 3);
+                }
+                else
+                {
+                    _switchCase = Random.Range(0, 3);
+                }
+            }
+        }
+        void SwitchWhatLayerSpawn()
+        {
+            switch (_switchCase)
+            {
+                case 0:
+                    _insideRocksCreator.CreateInsideRocks();
+                    _sideRockCreator.CreateSideRocks();
+                    break;
+                case 1:
+                    _enemySpawner.SpawnEnemy();
+                    break;
+                case 2:
+                    _sideRockCreator.CreateSideRocks();
+                    break;
+            }
+        }
+        void AddToLayerCounter()
+        {
 
+            _layerCounter++;
+        }
+        void MoveSpawnerForward()
+        {
+
+            transform.position += _moveVector;
+        }
     }
 }

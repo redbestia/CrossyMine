@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2536946833337871168}
   - component: {fileID: 7565852382644929079}
   - component: {fileID: -2990321666331774564}
+  - component: {fileID: 1214838665206941100}
+  - component: {fileID: -464095664624219909}
   m_Layer: 0
   m_Name: SmallMonster
   m_TagString: Enemy
@@ -111,6 +113,8 @@ MonoBehaviour:
   _maxTop: -32
   _maxDown: 24
   _topOrDown: 0
+  minEnemySpeed: 200
+  maxEnemySpeed: 400
 --- !u!54 &-2990321666331774564
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,3 +131,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 124
   m_CollisionDetection: 0
+--- !u!114 &1214838665206941100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67866180319101220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc75aa8adf05b5b4db1ba4f2f359a3d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagScript: Monster
+--- !u!114 &-464095664624219909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67866180319101220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01112ef7f4883404a91bdb070f2c033c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tracks: {fileID: 7971229138512268417, guid: 6e629c329c9228c498570cde9c86e274, type: 3}
+  spawnTracks: 0
+  minSpawn: 1
+  maxSpawn: 2
+  minDistance: 10
+  maxDistance: 30
