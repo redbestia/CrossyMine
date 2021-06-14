@@ -11,13 +11,23 @@ namespace CrossyMine
         public const string obstacleTag = "Obstacle";
         public const string playerTag = "Player";
         public const string fieldTag = "Field";
+        public const string mainCameraTag= "MainCamera";
+        public const string diedMenuTag = "DiedMenu";
+        public const string startMenuTag = "StartMenu";
+        public const string pauseMenuTag = "PauseMenu";
+        public const string pauseButonTag = "PauseMenu";
+        
         #endregion
 
         #region Script Tags
-        public const string MineCartTag = "MineCartSpawn";
-        public const string MonsterTag = "MonsterSpawn";
-        public const string RollingRockTag = "RollingRockSpawn";
+        public const string mineCartTag = "MineCartSpawn";
+        public const string monsterTag = "MonsterSpawn";
+        public const string rollingRockTag = "RollingRockSpawn";
 
+        #endregion
+
+        #region FileNames
+        public const string scoreBoardFileName = "ScoreBoard.txt";
         #endregion
     }
 }

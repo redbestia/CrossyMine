@@ -82,7 +82,6 @@ namespace CrossyMine
             //||
             //collision.gameObject.transform.parent.tag == GameSettings.Instance.ObstacleTag)
             {
-                Debug.Log("Hit Obstacle!");
                 ReflectJump();
                 if (Obstacle != null) Obstacle();
             }

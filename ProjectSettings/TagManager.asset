@@ -8,6 +8,11 @@ TagManager:
   - Enemy
   - Field
   - Menager
+  - DiedMenu
+  - LayerSpawner
+  - StartMenu
+  - PauseMenu
+  - PouseButton
   layers:
   - Default
   - TransparentFX

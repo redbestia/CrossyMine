@@ -6,6 +6,7 @@ namespace CrossyMine
 {
     public class InsideRocksCreator : RocksCreator
     {
+        [SerializeField,Tooltip("Chance to spawn rock 1:yournumber")] int _rockChance;
         public void CreateInsideRocks()
         {
             float _spawnPoint = -distance+2;
@@ -27,7 +28,7 @@ namespace CrossyMine
             List<int> RandomNumersForRocks = new List<int>();
             for (int i = 0; i < distance - 1; i++)
             {
-                if (Random.Range(0, 4) == 0) RandomNumersForRocks.Add(0);
+                if (Random.Range(0, _rockChance+1) == 0) RandomNumersForRocks.Add(0);
                 else
                 {
                     RandomNumersForRocks.Add(1);

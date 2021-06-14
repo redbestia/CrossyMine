@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 547397376206788879}
   - component: {fileID: 6488157018947721218}
   - component: {fileID: 2346952037155371008}
-  - component: {fileID: -4787772731765177242}
   - component: {fileID: 397821390080854419}
   - component: {fileID: -2338486985206690546}
   - component: {fileID: -5074559195355500045}
+  - component: {fileID: -4787772731765177242}
   - component: {fileID: 4452221256356441372}
+  - component: {fileID: 6388070741006641332}
   m_Layer: 0
   m_Name: Huge Monster 1
   m_TagString: Enemy
@@ -84,24 +85,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!114 &-4787772731765177242
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2899573692009144292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3fda0c19a349e947981c38fb4de6cfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 500
-  _maxTop: -32
-  _maxDown: 28
-  _topOrDown: 0
-  minEnemySpeed: 200
-  maxEnemySpeed: 400
 --- !u!54 &397821390080854419
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -129,8 +112,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 12.807824, y: 1.5505345, z: 1.5505333}
-  m_Center: {x: 5.4210367, y: 0.00000093172036, z: -1.032919}
+  m_Size: {x: 8.866448, y: 1.5505345, z: 1.5505332}
+  m_Center: {x: 3.4503493, y: 0.0000009536743, z: -1.032919}
 --- !u!114 &-5074559195355500045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,6 +127,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagScript: Monster
+--- !u!114 &-4787772731765177242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899573692009144292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fda0c19a349e947981c38fb4de6cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 500
+  _maxTop: -32
+  _maxDown: 28
+  _topOrDown: 0
+  minEnemySpeed: 200
+  maxEnemySpeed: 400
 --- !u!114 &4452221256356441372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +160,19 @@ MonoBehaviour:
   tracks: {fileID: 7971229138512268417, guid: 6e629c329c9228c498570cde9c86e274, type: 3}
   spawnTracks: 0
   minSpawn: 1
-  maxSpawn: 2
-  minDistance: 15
-  maxDistance: 25
+  maxSpawn: 1
+  minDistance: 25
+  maxDistance: 45
+--- !u!65 &6388070741006641332
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2899573692009144292}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8674774, y: 0.37432346, z: 1.2630872}
+  m_Center: {x: 9.891205, y: -0.0034766495, z: -1.1766421}
