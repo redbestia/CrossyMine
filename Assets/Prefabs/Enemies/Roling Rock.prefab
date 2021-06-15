@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2705227172965632994}
   - component: {fileID: 7263580818678645605}
   - component: {fileID: 3765017522314277184}
-  - component: {fileID: -7801321248795744098}
   - component: {fileID: -7856571610477094395}
   - component: {fileID: 1367878537865954057}
+  - component: {fileID: -7801321248795744098}
   - component: {fileID: -9038973834593718037}
   m_Layer: 0
   m_Name: Roling Rock
@@ -97,24 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.424271, y: 4.424271, z: 1.5259981}
   m_Center: {x: 0.5095384, y: 1.2522845, z: 0.000004082918}
---- !u!114 &-7801321248795744098
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5090732331952968893}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3fda0c19a349e947981c38fb4de6cfa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 500
-  _maxTop: -33
-  _maxDown: 23
-  _topOrDown: 0
-  minEnemySpeed: 300
-  maxEnemySpeed: 500
 --- !u!54 &-7856571610477094395
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -144,6 +126,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagScript: RollingRock
+--- !u!114 &-7801321248795744098
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5090732331952968893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3fda0c19a349e947981c38fb4de6cfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 500
+  _maxTop: -35
+  _maxDown: 38
+  _topOrDown: 1
+  minEnemySpeed: 200
+  maxEnemySpeed: 350
 --- !u!114 &-9038973834593718037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,6 +159,6 @@ MonoBehaviour:
   tracks: {fileID: 7971229138512268417, guid: 6e629c329c9228c498570cde9c86e274, type: 3}
   spawnTracks: 0
   minSpawn: 1
-  maxSpawn: 2
+  maxSpawn: 3
   minDistance: 9
   maxDistance: 20

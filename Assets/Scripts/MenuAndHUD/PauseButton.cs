@@ -1,18 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using CrossyMine;
 
 public class PauseButton : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void ShowPauseMenu()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        GameObject.FindGameObjectWithTag(Constants.pauseMenuTag).GetComponent<Canvas>().enabled = true;
+        Time.timeScale = 0;
     }
 }

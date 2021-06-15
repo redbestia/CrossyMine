@@ -12,7 +12,7 @@ TagManager:
   - LayerSpawner
   - StartMenu
   - PauseMenu
-  - PouseButton
+  - PauseButton
   layers:
   - Default
   - TransparentFX

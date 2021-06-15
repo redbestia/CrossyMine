@@ -36,7 +36,7 @@ public class HighScoreShower : MonoBehaviour
         }
         _scoreBoardList.Sort();
         _scoreBoardList.Reverse();
-        _scoreBoard += topText + " " ;
+        _scoreBoard += topText + "  " ;
         if(howMuchTopScoresShow>_scoreBoardList.Count)
             for (int i = 0; i < _scoreBoardList.Count; i++)
             {

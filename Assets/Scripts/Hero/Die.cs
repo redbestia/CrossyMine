@@ -21,6 +21,7 @@ public class Die : MonoBehaviour
         GetComponent<DieFormTransform>().enabled = false;
         GetComponent<DieFromTooSlow>().enabled = false;
         GetComponent<BoxCollider>().enabled = false;
+
     }
     void SaveScore()
     {

@@ -20,7 +20,7 @@ namespace CrossyMine
                 GameObject _tracks = Instantiate(tracks);
                 _tracks.transform.position += new Vector3(0, 0, _enemy.transform.position.z);
             }
-            int RandomNumberSpawns = Random.Range(minSpawn-1, maxSpawn-1);
+            int RandomNumberSpawns = Random.Range(minSpawn, maxSpawn);
             float RandomNumberDistance = 0.0f;
             for (int i = 0; i < RandomNumberSpawns; i++)
             {

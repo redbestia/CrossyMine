@@ -58,20 +58,47 @@ namespace CrossyMine
                 if (_switchCase == 0 | _switchCase == 3)
                 {
                     _switchCaseOneBack = _switchCase;
-                    _switchCase = Random.Range(1, 3);
+                    _switchCase = RandomNumberToSwitchNumberWithoutInsideRocks();
                 }
                 else if (_switchCase == 1 & _switchCaseOneBack == 0)
                 {
                     _switchCaseOneBack = _switchCase;
-                    _switchCase = Random.Range(1, 4);
+                    _switchCase = RandomNumberToSwitchNumberWithSpecialRocks();
                 }
                 else
                 {
                     _switchCaseOneBack = _switchCase;
-                    _switchCase = Random.Range(0, 3);
+                    _switchCase = RandomNumberToSwitchNumberNormal();
                 }
             }
         }
+        int RandomNumberToSwitchNumberWithoutInsideRocks()
+        {
+            int _result;
+            _result = Random.Range(rockSpawnChance, _allChance);
+                if (rockSpawnChance + enemySpawnChance > _result) return 1;
+            else return 2;
+        }
+        int RandomNumberToSwitchNumberWithSpecialRocks()
+
+        {
+            int _result;
+            _result = Random.Range(0, _allChance);
+            if (rockSpawnChance > _result) return 3;
+            if (rockSpawnChance + enemySpawnChance > _result) return 1;
+            else return 2;
+        }
+        int RandomNumberToSwitchNumberNormal()
+        {
+            int _result;
+            _result = Random.Range(0, _allChance);
+            if (rockSpawnChance > _result) return 0;
+            if (rockSpawnChance + enemySpawnChance > _result) return 1;
+            else return 2;
+        }
+
+
+
         void SwitchWhatLayerSpawn()
         {
             switch (_switchCase)
