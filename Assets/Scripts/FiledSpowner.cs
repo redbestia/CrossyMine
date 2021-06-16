@@ -6,7 +6,7 @@ public class FiledSpowner : MonoBehaviour
 {
     [SerializeField, Tooltip("Reference Camera")] private GameObject _camera;
     [SerializeField, Tooltip("Field Prefab")] private GameObject _field;
-    Vector3 _moveVector = new Vector3(0.0f,0.0f,20.0f);
+    [SerializeField, Tooltip("Distance between each field")] private float _fieldDistanceSpawn;
     public float _difBetwenSpawnerAndCamera;
     private void Update()
     {
@@ -16,7 +16,7 @@ public class FiledSpowner : MonoBehaviour
     {
         if (transform.position.z < _camera.transform.position.z + _difBetwenSpawnerAndCamera)
         {
-            transform.position += _moveVector;
+            transform.position += new Vector3(0,0,_fieldDistanceSpawn);
             GameObject field = Instantiate(_field);
             field.transform.position = transform.position;
         }

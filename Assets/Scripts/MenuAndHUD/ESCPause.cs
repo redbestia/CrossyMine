@@ -5,7 +5,7 @@ using CrossyMine;
 
 public class ESCPause : MonoBehaviour
 {
-    private void Update()
+    private void Update()// Pause if press ESC
     {
         if (Input.GetKey(KeyCode.Escape))
         {

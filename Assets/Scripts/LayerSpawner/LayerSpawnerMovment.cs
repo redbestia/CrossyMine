@@ -22,6 +22,7 @@ namespace CrossyMine
         int _switchCase;
         int _switchCaseOneBack;
 
+        #region MonoBehaviour
         private void Awake()
         {
             _sideRockCreator = GetComponent<SideRocksCreator>();
@@ -33,7 +34,7 @@ namespace CrossyMine
         {
             SpawnMoveSpawner();
         }
-
+        #endregion
         void SpawnMoveSpawner()
         {
             if (transform.position.z < _camera.transform.position.z + _difBetwenSpawnerAndCamera)
@@ -96,9 +97,6 @@ namespace CrossyMine
             if (rockSpawnChance + enemySpawnChance > _result) return 1;
             else return 2;
         }
-
-
-
         void SwitchWhatLayerSpawn()
         {
             switch (_switchCase)

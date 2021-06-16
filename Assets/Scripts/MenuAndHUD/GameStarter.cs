@@ -4,7 +4,7 @@ using UnityEngine;
 using CrossyMine;
 public class GameStarter : MonoBehaviour
 {
-    int _ifChecker = 0;
+    int _ifChecker = 0; 
     private void Update()
     {
         if (Input.GetKey(KeyCode.UpArrow) | Input.GetKey(KeyCode.DownArrow) | Input.GetKey(KeyCode.RightArrow) | Input.GetKey(KeyCode.LeftArrow) & _ifChecker == 0)

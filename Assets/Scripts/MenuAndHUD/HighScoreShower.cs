@@ -17,18 +17,15 @@ public class HighScoreShower : MonoBehaviour
     }
     void ShowHighScore()
     {
+        //Check and Create File
         StreamWriter _sw;
-
         if (!File.Exists(Constants.scoreBoardFileName)) _sw = File.CreateText(Constants.scoreBoardFileName);
         else _sw = new StreamWriter(Constants.scoreBoardFileName, true);
         _sw.Close();
-        
 
+        //Open file and prepear List
         StreamReader _sr = File.OpenText(Constants.scoreBoardFileName);
         string _scoreHolder;
-
-        
-
         List<int> _scoreBoardList = new List<int>();
         while ((_scoreHolder = _sr.ReadLine()) != null)
         {
@@ -36,6 +33,8 @@ public class HighScoreShower : MonoBehaviour
         }
         _scoreBoardList.Sort();
         _scoreBoardList.Reverse();
+
+        //Display High Scores
         _scoreBoard += topText + "  " ;
         if(howMuchTopScoresShow>_scoreBoardList.Count)
             for (int i = 0; i < _scoreBoardList.Count; i++)

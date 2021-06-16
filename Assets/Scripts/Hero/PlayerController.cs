@@ -10,23 +10,17 @@ namespace CrossyMine
 {
     public class PlayerController : MonoBehaviour
     {
-        public float GridSize = 2f;
         #region Events
         public event Action Jump;
         public event Action Obstacle;
         #endregion
 
-        /// <summary>
-        /// Force magnitude applied to the vertical movement
-        /// </summary>
-        [SerializeField, Tooltip("Jump height")] float _verticalJumpForce = 1f;
+       
+        [SerializeField, Tooltip("How high player will jump")] float _jumpForce = 1f;
 
-        /// <summary>
-        /// Horizontal movement speed - has to be .
-        /// hand-tuned to match the vertical speed
-        /// TODO: Extend the jumping mechanics by programmatic horizontalSpeed calculation
-        /// </summary>
-        [SerializeField, Tooltip("Horizontal speed")] float _horizontalSpeed = 1f;
+        [SerializeField, Tooltip("Forward speed")] float _forwardSpeed = 1f;
+
+        [SerializeField, Tooltip("Size of one squer in game")] float GridSize = 2f;
 
         Vector3Int _inputDir = Vector3Int.zero;
         bool _isJumping;
@@ -35,14 +29,14 @@ namespace CrossyMine
         Rigidbody _rigidBody;
 
         #region Monobehaviour
-        private void Awake()
+        private void Awake() // Get Rigidbody
         {
             _rigidBody = GetComponent<Rigidbody>();
         }
 
-        private void Update()
+        private void Update() //Get user input
         {
-            //Get user input - has to happen in Update
+           
             if (Input.GetKey(KeyCode.UpArrow)) _inputDir = new Vector3Int(0, 0, 1);
             else if (Input.GetKey(KeyCode.DownArrow)) _inputDir = new Vector3Int(0,0,-1);
             else if (Input.GetKey(KeyCode.RightArrow)) _inputDir = new Vector3Int(1, 0, 0);
@@ -51,19 +45,19 @@ namespace CrossyMine
             
         }
 
-        private void FixedUpdate()
+        private void FixedUpdate()//Jumping 
         {
             if (_isJumping)
             {
                 InterpolateHorizontal();
 
-                if (_rigidBody.velocity.magnitude <= 0.01f)
+                if (_rigidBody.velocity.magnitude <= 0.01f) //Jump checker
                 {
                     _isJumping = false;
                     _rigidBody.position = _nextPos;
                 }
             }
-            if (!_isJumping && _inputDir != Vector3Int.zero)
+            if (!_isJumping && _inputDir != Vector3Int.zero)//Jump if input
             {
                 StartMove(_inputDir);
                 _inputDir = Vector3Int.zero;
@@ -71,52 +65,39 @@ namespace CrossyMine
             }
         }
 
-        private void OnCollisionEnter(Collision collision)
+        private void OnCollisionEnter(Collision collision)// Obstacle hit
         {
             if (collision.gameObject.tag == Constants.obstacleTag)
-            //Przy wejściu hero na field(clone) NullReferenceException: Object reference not set to an instance of an object
-            //||
-            //collision.gameObject.transform.parent.tag == GameSettings.Instance.ObstacleTag)
             {
                 ReflectJump();
                 if (Obstacle != null) Obstacle();
             }
         }
         #endregion
-
-        /// <summary>
-        /// Interpolates the horizontal x,z position during jump
-        /// </summary>
-        private void InterpolateHorizontal()
+        private void InterpolateHorizontal() // Interpolates the horizontal x,z position during jump
         {
             _nextPos.y = _rigidBody.position.y;
-            var lerp = Vector3.Lerp(_rigidBody.position, _nextPos, _horizontalSpeed * Time.deltaTime);
+            var lerp = Vector3.Lerp(_rigidBody.position, _nextPos, _forwardSpeed * Time.deltaTime);
             _rigidBody.position = lerp;
         }
-
-        /// <summary>
-        /// Uses physics engine for vertical movement and simple lerping for horizontal.
-        /// </summary>
-        /// <param name="direction">Direction to move in</param>
-        private void StartMove(Vector3 direction)
+        private void StartMove(Vector3 direction)// Movement
         {
-            //Vertical movement
-            _rigidBody.AddForce(0f, _verticalJumpForce, 0f);
+            //Jump
+            _rigidBody.AddForce(0f, _jumpForce, 0f);
 
-            //Horizontal movemement
+            //Forward movemement
             Vector3 currentPos = _rigidBody.position;
             _nextPos = currentPos + direction * GridSize;
 
             _isJumping = true;
 
-            //Cache the currentPos, in case we need to go back
+            //If hit obstacle back to _prevPos
             _prevPos = currentPos;
         }
 
-        private void ReflectJump()
+        private void ReflectJump() // Back to _prevPos if Hit obstacle
         {
-            //Vertical movement
-            _rigidBody.AddForce(0f, _verticalJumpForce / 4.0f, 0f);
+            _rigidBody.AddForce(0f, _jumpForce / 4.0f, 0f);
             _nextPos = _prevPos;
         }
     }

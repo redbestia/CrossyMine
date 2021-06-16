@@ -5,7 +5,7 @@ using CrossyMine;
 
 public class MinimalizePause : MonoBehaviour
 {
-    bool _ifChecker = false;
+    bool _ifChecker = false; //Dont want pasue at the start of the game
     private void OnApplicationFocus(bool focus)
     {
         if(_ifChecker == true)

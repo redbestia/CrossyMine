@@ -11,6 +11,7 @@ namespace CrossyMine
         {
             float _spawnPoint = -distance+2;
             List<int> _listNumbers = ListWithRandomNumersToRandomRocks();
+            //Spawn random rocks
             for (int i = 0; i < distance - 1; i++)
             {
                 if(_listNumbers[i]==1)
@@ -22,6 +23,7 @@ namespace CrossyMine
             }
 
         }
+        // Prepear list to spawn rocks
         List<int> ListWithRandomNumersToRandomRocks()
         {
             int _fullRockCheck = 0;
@@ -35,6 +37,7 @@ namespace CrossyMine
                     _fullRockCheck += 1;
                 }
             }
+            // Make sure there is one empty square
             if (_fullRockCheck == 7) RandomNumersForRocks[Random.Range(0,  (int)distance-1)] = 0;
             return RandomNumersForRocks;
         }

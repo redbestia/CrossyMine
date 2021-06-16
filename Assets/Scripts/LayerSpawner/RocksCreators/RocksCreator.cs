@@ -7,7 +7,7 @@ namespace CrossyMine
 {
     public class RocksCreator : MonoBehaviour
     {
-        //[SerializeField, Tooltip("Distance Beetwen Side Rokcs And Middle")] 
+        //Distance Beetwen Side Rokcs And Middle
         public readonly float distance =  8;
 
         public GameObject InstantiateRandomRock()
