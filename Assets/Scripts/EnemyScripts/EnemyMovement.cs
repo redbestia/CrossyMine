@@ -11,7 +11,7 @@ public class EnemyMovement : MonoBehaviour
     public int minEnemySpeed;
     public int maxEnemySpeed;
     Rigidbody _rigidbody;
-
+    #region MonoBehaviour
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -26,6 +26,7 @@ public class EnemyMovement : MonoBehaviour
     {
         BackToStartIfRequired(); 
     }
+    #endregion
     private void BackToStartIfRequired()
     {
         if (_topOrDown) BackToStartTop();

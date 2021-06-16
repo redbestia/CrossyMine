@@ -8,11 +8,13 @@ public class Die : MonoBehaviour
 {
     PlayerController _playerController;
     Canvas _canvas;
+    #region MonoBehaviour
     private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
         _canvas = GameObject.FindWithTag(Constants.diedMenuTag).GetComponent<Canvas>();
     }
+    #endregion
     public void PlayerDied()
     {
         SaveScore();

@@ -8,11 +8,9 @@ using Vector3 = UnityEngine.Vector3;
 
 namespace CrossyMine
 {
-    /// <summary>
-    /// Grid movement player controller 
-    /// </summary>
     public class PlayerController : MonoBehaviour
     {
+        public float GridSize = 2f;
         #region Events
         public event Action Jump;
         public event Action Obstacle;
@@ -21,16 +19,14 @@ namespace CrossyMine
         /// <summary>
         /// Force magnitude applied to the vertical movement
         /// </summary>
-        [SerializeField, Tooltip("Jump height")]
-        float _verticalJumpForce = 1f;
+        [SerializeField, Tooltip("Jump height")] float _verticalJumpForce = 1f;
 
         /// <summary>
         /// Horizontal movement speed - has to be .
         /// hand-tuned to match the vertical speed
         /// TODO: Extend the jumping mechanics by programmatic horizontalSpeed calculation
         /// </summary>
-        [SerializeField, Tooltip("Horizontal speed")]
-        float _horizontalSpeed = 1f;
+        [SerializeField, Tooltip("Horizontal speed")] float _horizontalSpeed = 1f;
 
         Vector3Int _inputDir = Vector3Int.zero;
         bool _isJumping;
@@ -77,7 +73,7 @@ namespace CrossyMine
 
         private void OnCollisionEnter(Collision collision)
         {
-            if (collision.gameObject.tag == GameSettings.Instance.ObstacleTag )
+            if (collision.gameObject.tag == Constants.obstacleTag)
             //Przy wejściu hero na field(clone) NullReferenceException: Object reference not set to an instance of an object
             //||
             //collision.gameObject.transform.parent.tag == GameSettings.Instance.ObstacleTag)
@@ -109,7 +105,7 @@ namespace CrossyMine
 
             //Horizontal movemement
             Vector3 currentPos = _rigidBody.position;
-            _nextPos = currentPos + direction * GameSettings.Instance.GridSize;
+            _nextPos = currentPos + direction * GridSize;
 
             _isJumping = true;
 
