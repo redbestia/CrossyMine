@@ -16,6 +16,7 @@ namespace CrossyMine
         public const string startMenuTag = "StartMenu";
         public const string pauseMenuTag = "PauseMenu";
         public const string pauseButtonTag = "PauseButton";
+        public const string audioHolder = "AudioHolder";
         
         #endregion
 

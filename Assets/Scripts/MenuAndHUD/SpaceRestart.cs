@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using CrossyMine;
 
 public class SpaceRestart : MonoBehaviour
 {
@@ -10,9 +11,8 @@ public class SpaceRestart : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space) & _ifChecker == 0)
         {
-            Time.timeScale = 1;
             _ifChecker = 1;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            RestartGame.RestartStatic();
         }
     }
 }

@@ -13,6 +13,7 @@ TagManager:
   - StartMenu
   - PauseMenu
   - PauseButton
+  - AudioHolder
   layers:
   - Default
   - TransparentFX

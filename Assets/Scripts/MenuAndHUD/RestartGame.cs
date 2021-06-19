@@ -4,14 +4,19 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using System.IO;
-using CrossyMine;
 
-public class RestartGame : MonoBehaviour
+namespace CrossyMine
 {
-    public void Restart()
+    public class RestartGame : MonoBehaviour
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        public void Restart()
+        {
+            RestartStatic();
+        }
+        public static void RestartStatic()
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
     }
-    
 }
