@@ -26,9 +26,7 @@ namespace CrossyMine
             {
                 RandomNumberDistance += Random.Range(minDistance, maxDistance);
                 GameObject _newenemy = Instantiate(_enemy);
-                _newenemy.transform.position += new Vector3(RandomNumberDistance * (i + 1), 0.0f, 0.0f);
-                EnemyMovement _newenemyMovment = GetComponent<EnemyMovement>();
-                _newenemyMovment._topOrDown = _enemyMovment._topOrDown;
+                _newenemy.transform.position += new Vector3(RandomNumberDistance, 0.0f, 0.0f);
             }
 
         }

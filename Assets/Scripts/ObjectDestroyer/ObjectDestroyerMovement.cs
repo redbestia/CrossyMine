@@ -6,17 +6,19 @@ using CrossyMine;
 public class ObjectDestroyerMovement : MonoBehaviour
 {
     
-    Rigidbody _rigidbody;
+   // Rigidbody _rigidbody;
     GameObject _camera;
-    CameraMovment _cameraMovment;
+    //  CameraMovment _cameraMovment;
+    public int distanceBetweenCamera;
     private void Awake()
     {
-        _rigidbody = GetComponent<Rigidbody>();
+   //     _rigidbody = GetComponent<Rigidbody>();
         _camera = GameObject.FindWithTag(Constants.mainCameraTag);
-        _cameraMovment = _camera.GetComponent<CameraMovment>();
+   //     _cameraMovment = _camera.GetComponent<CameraMovment>();
     }
-    private void Start()
+    private void Update()
     {
-        _rigidbody.AddForce(new Vector3(0, 0, _cameraMovment.speed));
+        //    _rigidbody.AddForce(new Vector3(0, 0, _cameraMovment.speed));
+        transform.position = _camera.transform.position - new Vector3(0, 0, distanceBetweenCamera);
     }
 }

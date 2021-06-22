@@ -251,6 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d39eff6172be024ca5253d318e647d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  xPointWherePlayerWillDie: 24
 --- !u!114 &-6090069569920344970
 MonoBehaviour:
   m_ObjectHideFlags: 0

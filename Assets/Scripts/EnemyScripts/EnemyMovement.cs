@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField, Tooltip("EnemySpeed")] public float _speed = 1f;
+    [SerializeField, Tooltip("EnemySpeed")] public float speed = 1f;
     [SerializeField, Tooltip("Max Point Top")] float _maxTop;
     [SerializeField, Tooltip("Max Point Down")] float _maxDown;
     [SerializeField, Tooltip("Yes =going top No= going down")] public bool _topOrDown; 
@@ -34,13 +34,13 @@ public class EnemyMovement : MonoBehaviour
     }    
     private void ChooseDirecrion()
     {
-        if (_topOrDown) _rigidbody.AddForce(new Vector3(-1.0f * _speed, 0, 0));
+        if (_topOrDown) _rigidbody.AddForce(new Vector3(-1.0f * speed, 0, 0));
         else
         {
             if (transform.rotation.x > -0.1f) transform.Rotate(new Vector3(0, -180, 0));
             else transform.Rotate(new Vector3(0, 0, -180));
 
-            _rigidbody.AddForce(new Vector3(1.0f * _speed, 0, 0));
+            _rigidbody.AddForce(new Vector3(1.0f * speed, 0, 0));
         }
     }
     private void BackToStartTop()

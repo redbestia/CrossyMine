@@ -28,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
     {
         _enemyMovement = _enemy.GetComponent<EnemyMovement>();
         _enemyMovement._topOrDown = (0 == Random.Range(0, 2));
-        _enemyMovement._speed = Random.Range(_enemyMovement.minEnemySpeed, _enemyMovement.maxEnemySpeed +1);
+        _enemyMovement.speed = Random.Range(_enemyMovement.minEnemySpeed, _enemyMovement.maxEnemySpeed +1);
     }
     void SpecialEventOnSpawn()
     {

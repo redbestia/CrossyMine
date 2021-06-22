@@ -127,8 +127,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5013587, y: 1.2763935, z: 1.3185997}
-  m_Center: {x: 0.11280191, y: -0.0058329105, z: 0.3487274}
+  m_Size: {x: 2.1346579, y: 1.2763935, z: 1.3185997}
+  m_Center: {x: -0.070548534, y: -0.0058329105, z: 0.3487274}
 --- !u!54 &4551410766308321490
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -157,9 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3fda0c19a349e947981c38fb4de6cfa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 500
-  _maxTop: -40
-  _maxDown: 42
+  speed: 1
+  _maxTop: -35
+  _maxDown: 35
   _topOrDown: 0
   minEnemySpeed: 200
   maxEnemySpeed: 350
@@ -177,10 +177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracks: {fileID: 7971229138512268417, guid: 6e629c329c9228c498570cde9c86e274, type: 3}
   spawnTracks: 1
-  minSpawn: 3
-  maxSpawn: 9
-  minDistance: 2.1
-  maxDistance: 7
+  minSpawn: 4
+  maxSpawn: 7
+  minDistance: 5
+  maxDistance: 10
 --- !u!114 &-1923628341916304127
 MonoBehaviour:
   m_ObjectHideFlags: 0

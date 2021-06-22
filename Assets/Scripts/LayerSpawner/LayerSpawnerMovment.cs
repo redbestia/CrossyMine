@@ -16,6 +16,7 @@ namespace CrossyMine
         public float _difBetwenSpawnerAndCamera;
         SideRocksCreator _sideRockCreator;
         InsideRocksCreator _insideRocksCreator;
+        OutsideRockCreator _outsideRockCreator;
         EnemySpawner _enemySpawner;
         SpecialInsideRocksCreator _specialInsideRocksCreator;
         int _layerCounter = 1;
@@ -29,6 +30,7 @@ namespace CrossyMine
             _insideRocksCreator = GetComponent<InsideRocksCreator>();
             _enemySpawner = GetComponent<EnemySpawner>();
             _specialInsideRocksCreator = GetComponent<SpecialInsideRocksCreator>();
+            _outsideRockCreator = GetComponent<OutsideRockCreator>();
         }
         private void Update()
         {
@@ -104,16 +106,19 @@ namespace CrossyMine
                 case 0:
                      _insideRocksCreator.CreateInsideRocks();
                      _sideRockCreator.CreateSideRocks();
+                    _outsideRockCreator.CreateOutsideRocks();
                     break;
                 case 1:
                     _enemySpawner.SpawnEnemy();
                     break;
                 case 2:
                    _sideRockCreator.CreateSideRocks();
+                    _outsideRockCreator.CreateOutsideRocks();
                     break;
                 case 3:
                     _specialInsideRocksCreator.CreateSpecialInsideRocks();
                     _sideRockCreator.CreateSideRocks();
+                    _outsideRockCreator.CreateOutsideRocks();
                     break;
             }
         }

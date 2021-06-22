@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class DieFormTransform : Die
 {
-
+    public int xPointWherePlayerWillDie;
     private void Update()
     {
-        if (transform.position.x > 9 || transform.position.x < -9)
+        if (transform.position.x > xPointWherePlayerWillDie || transform.position.x < -xPointWherePlayerWillDie)
         {
             PlayerDied();
         }

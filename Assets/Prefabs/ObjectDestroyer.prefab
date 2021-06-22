@@ -73,6 +73,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20a38959fda45bd44ba74f47446bb3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceBetweenCamera: 28
 --- !u!54 &8387655239357970539
 Rigidbody:
   m_ObjectHideFlags: 0
