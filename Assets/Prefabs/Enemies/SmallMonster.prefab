@@ -161,7 +161,7 @@ MonoBehaviour:
   spawnTracks: 0
   minSpawn: 4
   maxSpawn: 5
-  minDistance: 13
+  minDistance: 8
   maxDistance: 17
 --- !u!65 &1020504519445423275
 BoxCollider:

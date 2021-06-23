@@ -128,8 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1
   _maxTop: -35
-  _maxDown: 38
-  _topOrDown: 1
+  _maxDown: 35
+  _topOrDown: 0
   minEnemySpeed: 200
   maxEnemySpeed: 350
 --- !u!114 &-9038973834593718037
@@ -149,7 +149,7 @@ MonoBehaviour:
   minSpawn: 2
   maxSpawn: 4
   minDistance: 9
-  maxDistance: 15
+  maxDistance: 16
 --- !u!64 &7767531826438737661
 MeshCollider:
   m_ObjectHideFlags: 0

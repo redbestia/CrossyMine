@@ -33,8 +33,8 @@ public class EnemySpawner : MonoBehaviour
     void SpecialEventOnSpawn()
     {
         _enemyMovement = _enemy.GetComponent<EnemyMovement>();
-        OnSpawnEvent _enemySpawn = _enemy.GetComponent<OnSpawnEvent>();
-        _enemySpawn.SpawnEvent(_enemy, _enemyMovement);
+        OnSpawnEvent enemySpawn = _enemy.GetComponent<OnSpawnEvent>();
+        enemySpawn.SpawnEvent(_enemy, _enemyMovement);
     }
    
 }

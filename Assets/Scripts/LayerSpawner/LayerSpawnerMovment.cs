@@ -63,7 +63,7 @@ namespace CrossyMine
                     _switchCaseOneBack = _switchCase;
                     _switchCase = RandomNumberToSwitchNumberWithoutInsideRocks();
                 }
-                else if (_switchCase == 1 & _switchCaseOneBack == 0)
+                else if (_switchCase == 1 & _switchCaseOneBack == 0 || _switchCase == 1 & _switchCaseOneBack == 3)
                 {
                     _switchCaseOneBack = _switchCase;
                     _switchCase = RandomNumberToSwitchNumberWithSpecialRocks();
