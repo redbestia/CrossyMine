@@ -17,7 +17,9 @@ namespace CrossyMine
         public const string pauseMenuTag = "PauseMenu";
         public const string pauseButtonTag = "PauseButton";
         public const string audioHolder = "AudioHolder";
-        
+        public const string enemySpawnerTag = "EnmeySpawner";
+        public const string startButtonTag = "StartButton";
+
         #endregion
 
         #region Script Tags

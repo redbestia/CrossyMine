@@ -18,11 +18,18 @@ public class Die : MonoBehaviour
     public void PlayerDied()
     {
         SaveScore();
-        _playerController.enabled = false;
         _canvas.enabled = true;
+        GameObject.FindGameObjectWithTag(Constants.startButtonTag).GetComponent<GameStarter>().enabled = false;
+        _playerController.enabled = false;
+        GetComponent<BoxCollider>().enabled = false;
+        GetComponent<Rigidbody>().useGravity = false;
+        GetComponent<Rigidbody>().Sleep();
         GetComponent<DieFormTransform>().enabled = false;
         GetComponent<DieFromTooSlow>().enabled = false;
-        GetComponent<BoxCollider>().enabled = false;
+        transform.localScale = new Vector3 (transform.localScale.x, 0.1f, transform.localScale.z);
+        transform.position = new Vector3(transform.position.x, 0, transform.position.z);
+
+        
 
     }
     void SaveScore()

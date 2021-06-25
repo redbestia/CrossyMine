@@ -158,9 +158,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  _maxTop: -35
-  _maxDown: 35
+  spawnPoint: 35
   _topOrDown: 0
+  minDistanc: 6
+  maxDistanc: 15
   minEnemySpeed: 200
   maxEnemySpeed: 350
 --- !u!114 &-3297911867699175494
@@ -177,10 +178,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tracks: {fileID: 7971229138512268417, guid: 6e629c329c9228c498570cde9c86e274, type: 3}
   spawnTracks: 1
-  minSpawn: 2
-  maxSpawn: 5
-  minDistance: 5
-  maxDistance: 15
 --- !u!114 &-1923628341916304127
 MonoBehaviour:
   m_ObjectHideFlags: 0

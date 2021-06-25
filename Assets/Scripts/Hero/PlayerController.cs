@@ -16,7 +16,7 @@ namespace CrossyMine
         #endregion
 
        
-        [SerializeField, Tooltip("How high player will jump")] float _jumpForce = 1f;
+        [SerializeField, Tooltip("How high player will jump")]  float _jumpForce = 1f;
 
         [SerializeField, Tooltip("Forward speed")] float _forwardSpeed = 1f;
 
@@ -27,6 +27,8 @@ namespace CrossyMine
         Vector3 _nextPos;
         Vector3 _prevPos;
         Rigidbody _rigidBody;
+
+       // float _lastTime = 0;
 
         #region Monobehaviour
         private void Awake() // Get Rigidbody
@@ -82,6 +84,8 @@ namespace CrossyMine
         }
         private void StartMove(Vector3 direction)// Movement
         {
+          //  Debug.Log(Time.fixedTime -_lastTime);
+          //  _lastTime = Time.fixedTime;
             //Jump
             _rigidBody.AddForce(0f, _jumpForce, 0f);
 

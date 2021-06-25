@@ -19,6 +19,7 @@ namespace CrossyMine
         OutsideRockCreator _outsideRockCreator;
         EnemySpawner _enemySpawner;
         SpecialInsideRocksCreator _specialInsideRocksCreator;
+        CreatorEnemySpawner _creatorEnemySpawner;
         int _layerCounter = 1;
         int _switchCase;
         int _switchCaseOneBack;
@@ -31,6 +32,7 @@ namespace CrossyMine
             _enemySpawner = GetComponent<EnemySpawner>();
             _specialInsideRocksCreator = GetComponent<SpecialInsideRocksCreator>();
             _outsideRockCreator = GetComponent<OutsideRockCreator>();
+            _creatorEnemySpawner = GetComponent<CreatorEnemySpawner>();
         }
         private void Update()
         {
@@ -109,7 +111,7 @@ namespace CrossyMine
                     _outsideRockCreator.CreateOutsideRocks();
                     break;
                 case 1:
-                    _enemySpawner.SpawnEnemy();
+                    _creatorEnemySpawner.CreateEnemySpawner();
                     break;
                 case 2:
                    _sideRockCreator.CreateSideRocks();
