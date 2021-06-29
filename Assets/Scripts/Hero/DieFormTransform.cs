@@ -7,7 +7,8 @@ public class DieFormTransform : Die
     public int xPointWherePlayerWillDie;
     private void Update()
     {
-        if (transform.position.x > xPointWherePlayerWillDie || transform.position.x < -xPointWherePlayerWillDie)
+        if (transform.position.x > xPointWherePlayerWillDie || 
+            transform.position.x < -xPointWherePlayerWillDie)
         {
             PlayerDied();
         }

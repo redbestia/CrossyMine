@@ -8,7 +8,7 @@ namespace CrossyMine
     public class RocksCreator : MonoBehaviour
     {
         //Distance Beetwen Side Rokcs And Middle
-        public readonly float distance =  8;
+        public readonly float Distance =  8;
 
         public GameObject InstantiateRandomRock()
         {

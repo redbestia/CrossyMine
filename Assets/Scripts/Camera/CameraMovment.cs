@@ -6,15 +6,21 @@ using CrossyMine;
 public class CameraMovment : MonoBehaviour
 {
     [SerializeField, Tooltip("CameraSpeed")]
-    public float speed = 1f;
     Rigidbody _rigidbody;
-    Transform _playerTransform;
-    Vector3 _positionVector;
-    [SerializeField, Tooltip("Camera position in relation to player")] float _cameraPositionToPlayer;
+    [SerializeField, Tooltip("Camera position in relation to player")] 
+    public float speed = 1f;
+
     public float slowJumpCamera;
     public float slowCamera;
     public float endOfSpeedingCamera;
+
+    Transform _playerTransform;
+    Vector3 _positionVector;
+
+    float _cameraPositionToPlayer;
+     
     #region MonoBehaviour
+
     private void Awake()
     {
         GetRigidbodyAndPlayerTransform();
@@ -38,14 +44,18 @@ public class CameraMovment : MonoBehaviour
     }
     void PrepearCameraTransformOnStart()
     {
-        transform.position = _positionVector + new Vector3(0, 0, (_playerTransform.position.z - _positionVector.z) / slowJumpCamera);
-        _positionVector += new Vector3(0, 0, (speed / 100) * (_playerTransform.position.z - _positionVector.z + endOfSpeedingCamera) / slowCamera);
+        transform.position = _positionVector + new Vector3(0, 0, 
+            (_playerTransform.position.z - _positionVector.z) / slowJumpCamera);
+        _positionVector += new Vector3(0, 0, (speed / 100) * 
+            (_playerTransform.position.z - _positionVector.z + endOfSpeedingCamera) / slowCamera);
     }
     void MoveCamera()
     {
-        transform.position = _positionVector + new Vector3(0, 0, (_playerTransform.position.z - _positionVector.z) / slowJumpCamera);
+        transform.position = _positionVector + new Vector3(0, 0, 
+            (_playerTransform.position.z - _positionVector.z) / slowJumpCamera);
 
-        _positionVector += new Vector3(0, 0, (speed / 100) * (_playerTransform.position.z - _positionVector.z + endOfSpeedingCamera) / slowCamera);
+        _positionVector += new Vector3(0, 0, (speed / 100) * 
+            (_playerTransform.position.z - _positionVector.z + endOfSpeedingCamera) / slowCamera);
     }
 
 }

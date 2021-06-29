@@ -4,12 +4,12 @@ using UnityEngine;
 using CrossyMine;
 public class EnemySpawner : MonoBehaviour
 {
-    float _randomDistance;
     GameObject _enemy;
     GameObject _enemyToInstantite;
-    int _randomNumber;
     EnemyMovement _enemyMovement;
-    private float _sumRnadomDistance =0;
+    float _randomDistance;
+    int _randomNumber;
+    float _sumRnadomDistance =0;
 
     #region MonoBehaviour
     private void Start()
@@ -18,11 +18,13 @@ public class EnemySpawner : MonoBehaviour
         SpecialEventOnSpawn();
         SawnMoreOnStart();
     }
+
     private void Update()
     {
         CheckPositionAndSpawn();
     }
     #endregion
+
     void CheckPositionAndSpawn()
     {
          if (! (_enemy == null))
@@ -34,6 +36,7 @@ public class EnemySpawner : MonoBehaviour
             }
         }
     }
+
     void SawnMoreOnStart()
     {
         _randomDistance = RandomDistance();

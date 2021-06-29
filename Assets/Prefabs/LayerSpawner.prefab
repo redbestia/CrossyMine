@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: -1987413379375280884}
   - component: {fileID: 7085486882695658320}
   - component: {fileID: -3212056495404901463}
+  - component: {fileID: -2996497351302726568}
   m_Layer: 0
   m_Name: LayerSpawner
   m_TagString: Untagged
@@ -51,9 +52,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 081828999e12e3144b96303afd9f2525, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rockSpawnChance: 0
-  enemySpawnChance: 0
-  noRockSpawnChance: 0
   _camera: {fileID: 0}
   _difBetwenSpawnerAndCamera: 30
 --- !u!114 &1380242971920210504
@@ -168,4 +166,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 857335492c4e2504f80289a28b42731e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpawner: {fileID: 0}
+  enemySpawner: {fileID: 6290168230041708791, guid: 4362c14c3ba18a143b99da2f3b2a0f08,
+    type: 3}
+--- !u!114 &-2996497351302726568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380242971920210509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bed13881b2c9e43459b6fde987c860ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rockSpawnChance: 2
+  enemySpawnChance: 4
+  noRockSpawnChance: 1
+  _allChance: 0

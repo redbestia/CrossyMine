@@ -4,43 +4,74 @@ using UnityEngine;
 
 namespace CrossyMine
 {
+    public class RockGeneratorOutput
+    {
+        public IEnumerable<bool> RockSpawnFlags => ShouldSpawnRocksRow;
+        private List<bool> ShouldSpawnRocksRow = new List<bool>();
+
+        public void Add(bool SpawnChance)
+        {
+            ShouldSpawnRocksRow.Add(SpawnChance);
+        }
+    }
+
     public class InsideRocksCreator : RocksCreator
     {
-        [SerializeField,Tooltip("Chance to spawn rock 1:yournumber")] int _rockChance;
+        [SerializeField, Tooltip("Chance to spawn rock 1:yournumber")] int _rockChance;
         public void CreateInsideRocks()
         {
-            float _spawnPoint = -distance+2;
-            List<int> _listNumbers = ListWithRandomNumersToRandomRocks();
-            //Spawn random rocks
-            for (int i = 0; i < distance - 1; i++)
-            {
-                if(_listNumbers[i]==1)
-                {
-                    GameObject _rock = InstantiateRandomRock();
-                    _rock.transform.position = transform.position + new Vector3(_spawnPoint, 0.0f, 0.0f);
-                }
-                _spawnPoint += 2;
-            }
+            const int SpawnPointOffsetAfterSpawn = 2;
 
+            float _spawnPoint = -Distance + SpawnPointOffsetAfterSpawn;
+            RockGeneratorOutput _listNumbers = ListWithRandomNumersToRandomRocks();
+            //Spawn random rocks
+
+            foreach (var shouldSpawn in _listNumbers.RockSpawnFlags)
+            {
+                if (!shouldSpawn)
+                    return;
+
+                GameObject _rock = InstantiateRandomRock();
+                _rock.transform.position = transform.position + new Vector3(_spawnPoint, 0.0f, 0.0f);
+
+                _spawnPoint += SpawnPointOffsetAfterSpawn;
+            }
         }
+
         // Prepear list to spawn rocks
-        List<int> ListWithRandomNumersToRandomRocks()
+        RockGeneratorOutput ListWithRandomNumersToRandomRocks()
         {
             int _fullRockCheck = 0;
-            List<int> RandomNumersForRocks = new List<int>();
-            for (int i = 0; i < distance - 1; i++)
+            RockGeneratorOutput RandomNumersForRocks = new RockGeneratorOutput();
+
+            // Make sure there is one empty square
+            var randomOpenSquareIndex = GetRandomOpenSquareIndex();
+
+            for (int i = 0; i < Distance - 1; i++)
             {
-                if (Random.Range(0, _rockChance+1) == 0) RandomNumersForRocks.Add(0);
+                if (randomOpenSquareIndex == i)
+                    RandomNumersForRocks.Add(false);
+
+                if (ShouldLeaveOpenSquareRandom())
+                    RandomNumersForRocks.Add(false);
                 else
                 {
-                    RandomNumersForRocks.Add(1);
+                    RandomNumersForRocks.Add(true);
                     _fullRockCheck += 1;
                 }
             }
-            // Make sure there is one empty square
-            if (_fullRockCheck == 7) RandomNumersForRocks[Random.Range(0,  (int)distance-1)] = 0;
+
             return RandomNumersForRocks;
         }
-        
+
+        private bool ShouldLeaveOpenSquareRandom()
+        {
+            return Random.Range(0, _rockChance + 1) == 0;
+        }
+
+        private int GetRandomOpenSquareIndex()
+        {
+            return Random.Range(0, (int)Distance - 1);
+        }
     }
 }

@@ -10,11 +10,14 @@ public class HighScoreShower : MonoBehaviour
 {
     public string topText;
     public int howMuchTopScoresShow;
+
     string _scoreBoard = "";
+
     private void Start()
     {
         ShowHighScore();
     }
+
     void ShowHighScore()
     {
         //Check and Create File

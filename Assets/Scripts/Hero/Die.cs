@@ -8,6 +8,7 @@ public class Die : MonoBehaviour
 {
     PlayerController _playerController;
     Canvas _canvas;
+
     #region MonoBehaviour
     private void Awake()
     {
@@ -15,6 +16,7 @@ public class Die : MonoBehaviour
         _canvas = GameObject.FindWithTag(Constants.diedMenuTag).GetComponent<Canvas>();
     }
     #endregion
+
     public void PlayerDied()
     {
         SaveScore();
@@ -32,6 +34,7 @@ public class Die : MonoBehaviour
         
 
     }
+
     void SaveScore()
     {
         StreamWriter _sw;
