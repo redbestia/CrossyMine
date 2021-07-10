@@ -22,12 +22,12 @@ public class HighScoreShower : MonoBehaviour
     {
         //Check and Create File
         StreamWriter _sw;
-        if (!File.Exists(Constants.scoreBoardFileName)) _sw = File.CreateText(Constants.scoreBoardFileName);
-        else _sw = new StreamWriter(Constants.scoreBoardFileName, true);
+        if (!File.Exists(Constants.ScoreBoardFileName)) _sw = File.CreateText(Constants.ScoreBoardFileName);
+        else _sw = new StreamWriter(Constants.ScoreBoardFileName, true);
         _sw.Close();
 
         //Open file and prepear List
-        StreamReader _sr = File.OpenText(Constants.scoreBoardFileName);
+        StreamReader _sr = File.OpenText(Constants.ScoreBoardFileName);
         string _scoreHolder;
         List<int> _scoreBoardList = new List<int>();
         while ((_scoreHolder = _sr.ReadLine()) != null)

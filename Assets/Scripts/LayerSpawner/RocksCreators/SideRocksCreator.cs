@@ -11,9 +11,10 @@ namespace CrossyMine
         public void CreateSideRocks()
         {
             GameObject _leftRock = InstantiateRandomRock();
-            _leftRock.transform.position = transform.position + new Vector3(-Distance, 0.0f  , 0.0f);
+            _leftRock.transform.position = transform.position + new Vector3(-DistanceFromMidToSideRock, 0.0f  , 0.0f);
+
             GameObject _rightRock = InstantiateRandomRock();
-            _rightRock.transform.position = transform.position + new Vector3(Distance, 0.0f, 0.0f);
+            _rightRock.transform.position = transform.position + new Vector3(DistanceFromMidToSideRock, 0.0f, 0.0f);
         }
     }
 }

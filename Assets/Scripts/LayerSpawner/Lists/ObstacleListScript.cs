@@ -8,6 +8,7 @@ namespace CrossyMine
     {
         public List<GameObject> obstacleListToStatic;
         public static List<GameObject> obstacleList;
+
             private void Awake()
         {
             obstacleList = obstacleListToStatic;

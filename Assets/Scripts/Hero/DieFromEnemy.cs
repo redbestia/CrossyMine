@@ -7,7 +7,7 @@ public class DieFromEnemy : Die
 {
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == Constants.enemyTag)
+        if(collision.gameObject.tag == Constants.EnemyTag)
         {
             PlayerDied();
         }

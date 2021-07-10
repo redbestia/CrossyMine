@@ -12,7 +12,7 @@ public class Score : MonoBehaviour
     private void Awake()
     {
         _textMeshProUGUI = GetComponent<TextMeshProUGUI>();
-        _player = GameObject.FindWithTag(Constants.playerTag);
+        _player = GameObject.FindWithTag(Constants.PlayerTag);
     }
     void Update()
     {
@@ -21,6 +21,7 @@ public class Score : MonoBehaviour
 
     void GetScoreDisplayIt()
     {
-        _textMeshProUGUI.text = "Score: " + ((((int)_player.transform.position.z) / 2) - 2).ToString();
+        _textMeshProUGUI.text = "Score: "
+            + ((((int)_player.transform.position.z) / 2) - 2).ToString();
     }
 }

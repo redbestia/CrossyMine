@@ -16,10 +16,10 @@ public class GameStarter : MonoBehaviour
 
     public void StartGame()
     {
-        GameObject.FindGameObjectWithTag(Constants.playerTag).GetComponent<PlayerController>().enabled = true;
-        GameObject.FindGameObjectWithTag(Constants.mainCameraTag).GetComponent<CameraMovment>().enabled = true;
-        GameObject.FindGameObjectWithTag(Constants.startMenuTag).GetComponent<Canvas>().enabled = false;
-        GameObject.FindGameObjectWithTag(Constants.pauseMenuTag).GetComponent<Canvas>().enabled = false;
+        GameObject.FindGameObjectWithTag(Constants.PlayerTag).GetComponent<PlayerController>().enabled = true;
+        GameObject.FindGameObjectWithTag(Constants.MainCameraTag).GetComponent<CameraMovment>().enabled = true;
+        GameObject.FindGameObjectWithTag(Constants.StartMenuTag).GetComponent<Canvas>().enabled = false;
+        GameObject.FindGameObjectWithTag(Constants.PauseMenuTag).GetComponent<Canvas>().enabled = false;
         Time.timeScale = 1;
     }
 

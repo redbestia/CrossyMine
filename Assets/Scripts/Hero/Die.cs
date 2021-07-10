@@ -13,7 +13,7 @@ public class Die : MonoBehaviour
     private void Awake()
     {
         _playerController = GetComponent<PlayerController>();
-        _canvas = GameObject.FindWithTag(Constants.diedMenuTag).GetComponent<Canvas>();
+        _canvas = GameObject.FindWithTag(Constants.DiedMenuTag).GetComponent<Canvas>();
     }
     #endregion
 
@@ -21,7 +21,7 @@ public class Die : MonoBehaviour
     {
         SaveScore();
         _canvas.enabled = true;
-        GameObject.FindGameObjectWithTag(Constants.startButtonTag).GetComponent<GameStarter>().enabled = false;
+        GameObject.FindGameObjectWithTag(Constants.StartButtonTag).GetComponent<GameStarter>().enabled = false;
         _playerController.enabled = false;
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<Rigidbody>().useGravity = false;
@@ -38,8 +38,8 @@ public class Die : MonoBehaviour
     void SaveScore()
     {
         StreamWriter _sw;
-        if (!File.Exists(Constants.scoreBoardFileName)) _sw = File.CreateText(Constants.scoreBoardFileName);
-        else _sw = new StreamWriter(Constants.scoreBoardFileName, true);
+        if (!File.Exists(Constants.ScoreBoardFileName)) _sw = File.CreateText(Constants.ScoreBoardFileName);
+        else _sw = new StreamWriter(Constants.ScoreBoardFileName, true);
         _sw.WriteLine(((((int)transform.position.z) / 2) - 2).ToString());
         _sw.Close();
     }

@@ -7,7 +7,7 @@ public class PauseButton : MonoBehaviour
 {
     public void ShowPauseMenu()
     {
-        GameObject.FindGameObjectWithTag(Constants.pauseMenuTag).GetComponent<Canvas>().enabled = true;
+        GameObject.FindGameObjectWithTag(Constants.PauseMenuTag).GetComponent<Canvas>().enabled = true;
         Time.timeScale = 0;
     }
 }

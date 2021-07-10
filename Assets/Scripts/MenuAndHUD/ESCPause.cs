@@ -9,7 +9,7 @@ public class ESCPause : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            GameObject.FindGameObjectWithTag(Constants.pauseMenuTag).GetComponent<Canvas>().enabled = true;
+            GameObject.FindGameObjectWithTag(Constants.PauseMenuTag).GetComponent<Canvas>().enabled = true;
             Time.timeScale = 0;
         }
     }

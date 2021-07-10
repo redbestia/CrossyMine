@@ -8,6 +8,6 @@ public class AudioHolderTime : MonoBehaviour
     GameObject _camera;
     private void Awake()
     {
-        _camera = GameObject.FindGameObjectWithTag(Constants.mainCameraTag);
+        _camera = GameObject.FindGameObjectWithTag(Constants.MainCameraTag);
     }
 }

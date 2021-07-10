@@ -12,7 +12,7 @@ public class DieFromTooSlow : Die
 
     private void Start()
     {
-        _camera = GameObject.FindGameObjectWithTag(Constants.mainCameraTag);
+        _camera = GameObject.FindGameObjectWithTag(Constants.MainCameraTag);
     }
 
     private void Update()

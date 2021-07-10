@@ -11,11 +11,15 @@ public class MinimalizePause : MonoBehaviour
         // Debug.Log("Pause " + _ifChecker);
         if (_ifChecker == true && focus == false)
         {
-            GameObject.FindGameObjectWithTag(Constants.pauseMenuTag).GetComponent<Canvas>().enabled = true;
+            GameObject.FindGameObjectWithTag(Constants.PauseMenuTag).
+                GetComponent<Canvas>().enabled = true;
             Time.timeScale = 0;
-            GameObject.FindGameObjectWithTag(Constants.audioHolder).GetComponent<AudioSource>().mute = true;
+            GameObject.FindGameObjectWithTag(Constants.AudioHolder).
+                GetComponent<AudioSource>().mute = true;
         }
-        else GameObject.FindGameObjectWithTag(Constants.audioHolder).GetComponent<AudioSource>().mute = false;
+        else GameObject.FindGameObjectWithTag(Constants.AudioHolder).
+                GetComponent<AudioSource>().mute = false;
         _ifChecker = true;
         
-    }}
+    }
+}

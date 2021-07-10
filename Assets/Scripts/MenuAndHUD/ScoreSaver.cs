@@ -12,7 +12,7 @@ public class ScoreSaver : MonoBehaviour
 
     private void Awake()
     { 
-        _player = GameObject.FindWithTag(Constants.playerTag);
+        _player = GameObject.FindWithTag(Constants.PlayerTag);
     }
 
     void SaveScore()

@@ -7,7 +7,7 @@ public class ResumeButton : MonoBehaviour
 {
     public void ResumeGame()
     {
-        GameObject.FindGameObjectWithTag(Constants.pauseMenuTag).GetComponent<Canvas>().enabled = false;
+        GameObject.FindGameObjectWithTag(Constants.PauseMenuTag).GetComponent<Canvas>().enabled = false;
         Time.timeScale = 1;
     }
 }

@@ -20,9 +20,7 @@ namespace CrossyMine
         [SerializeField, Tooltip("Chance to spawn rock 1:yournumber")] int _rockChance;
         public void CreateInsideRocks()
         {
-            const int SpawnPointOffsetAfterSpawn = 2;
-
-            float _spawnPoint = -Distance + SpawnPointOffsetAfterSpawn;
+            float _spawnPoint = -DistanceFromMidToSideRock + Constants.GridSize;
             RockGeneratorOutput _listNumbers = ListWithRandomNumersToRandomRocks();
             //Spawn random rocks
 
@@ -34,7 +32,7 @@ namespace CrossyMine
                 GameObject _rock = InstantiateRandomRock();
                 _rock.transform.position = transform.position + new Vector3(_spawnPoint, 0.0f, 0.0f);
 
-                _spawnPoint += SpawnPointOffsetAfterSpawn;
+                _spawnPoint += Constants.GridSize;
             }
         }
 
@@ -47,7 +45,7 @@ namespace CrossyMine
             // Make sure there is one empty square
             var randomOpenSquareIndex = GetRandomOpenSquareIndex();
 
-            for (int i = 0; i < Distance - 1; i++)
+            for (int i = 0; i < DistanceFromMidToSideRock - 1; i++)
             {
                 if (randomOpenSquareIndex == i)
                     RandomNumersForRocks.Add(false);
@@ -71,7 +69,7 @@ namespace CrossyMine
 
         private int GetRandomOpenSquareIndex()
         {
-            return Random.Range(0, (int)Distance - 1);
+            return Random.Range(0, (int)DistanceFromMidToSideRock - 1);
         }
     }
 }

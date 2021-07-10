@@ -7,30 +7,36 @@ namespace CrossyMine
     public class Constants : MonoBehaviour
     {
         #region Unity Tags
-        public const string enemyTag = "Enemy";
-        public const string obstacleTag = "Obstacle";
-        public const string playerTag = "Player";
-        public const string fieldTag = "Field";
-        public const string mainCameraTag= "MainCamera";
-        public const string diedMenuTag = "DiedMenu";
-        public const string startMenuTag = "StartMenu";
-        public const string pauseMenuTag = "PauseMenu";
-        public const string pauseButtonTag = "PauseButton";
-        public const string audioHolder = "AudioHolder";
-        public const string enemySpawnerTag = "EnmeySpawner";
-        public const string startButtonTag = "StartButton";
+        public const string EnemyTag = "Enemy";
+        public const string ObstacleTag = "Obstacle";
+        public const string PlayerTag = "Player";
+        public const string FieldTag = "Field";
+        public const string MainCameraTag= "MainCamera";
+        public const string DiedMenuTag = "DiedMenu";
+        public const string StartMenuTag = "StartMenu";
+        public const string PauseMenuTag = "PauseMenu";
+        public const string PauseButtonTag = "PauseButton";
+        public const string AudioHolder = "AudioHolder";
+        public const string EnemySpawnerTag = "EnmeySpawner";
+        public const string StartButtonTag = "StartButton";
 
         #endregion
 
         #region Script Tags
-        public const string mineCartTag = "MineCartSpawn";
-        public const string monsterTag = "MonsterSpawn";
-        public const string rollingRockTag = "RollingRockSpawn";
+        public const string MineCartTag = "MineCartSpawn";
+        public const string MonsterTag = "MonsterSpawn";
+        public const string RollingRockTag = "RollingRockSpawn";
 
         #endregion
 
         #region FileNames
-        public const string scoreBoardFileName = "ScoreBoard.txt";
+        public const string ScoreBoardFileName = "ScoreBoard.txt";
         #endregion
+
+        #region GameSettings
+        public const float GridSize = 2;
+
+        #endregion
+        
     }
 }

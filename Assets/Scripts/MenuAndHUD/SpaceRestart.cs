@@ -6,12 +6,11 @@ using CrossyMine;
 
 public class SpaceRestart : MonoBehaviour
 {
-    int _ifChecker = 0;
+
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space) & _ifChecker == 0)
+        if (Input.GetKey(KeyCode.Space ))
         {
-            _ifChecker = 1;
             RestartGame.RestartStatic();
         }
     }

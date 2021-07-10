@@ -17,15 +17,15 @@ public class CameraMovment : MonoBehaviour
     Transform _playerTransform;
     Vector3 _positionVector;
 
-    float _cameraPositionToPlayer;
-     
+    float diffBetweenPlayerAndPositionVector;
+
     #region MonoBehaviour
 
     private void Awake()
     {
         GetRigidbodyAndPlayerTransform();
         PrepearPositionVector();
-        PrepearCameraTransformOnStart();
+        MoveCamera();
     }
     private void FixedUpdate()
     {
@@ -36,26 +36,21 @@ public class CameraMovment : MonoBehaviour
     {
 
         _rigidbody = GetComponent<Rigidbody>();
-        _playerTransform = GameObject.FindGameObjectWithTag(Constants.playerTag).transform;
+        _playerTransform = GameObject.FindGameObjectWithTag(Constants.PlayerTag).transform;
     }
     void PrepearPositionVector()
     {
         _positionVector = transform.position;
     }
-    void PrepearCameraTransformOnStart()
-    {
-        transform.position = _positionVector + new Vector3(0, 0, 
-            (_playerTransform.position.z - _positionVector.z) / slowJumpCamera);
-        _positionVector += new Vector3(0, 0, (speed / 100) * 
-            (_playerTransform.position.z - _positionVector.z + endOfSpeedingCamera) / slowCamera);
-    }
     void MoveCamera()
     {
+        diffBetweenPlayerAndPositionVector = _playerTransform.position.z - _positionVector.z;
+
         transform.position = _positionVector + new Vector3(0, 0, 
-            (_playerTransform.position.z - _positionVector.z) / slowJumpCamera);
+            (diffBetweenPlayerAndPositionVector) / slowJumpCamera);
 
         _positionVector += new Vector3(0, 0, (speed / 100) * 
-            (_playerTransform.position.z - _positionVector.z + endOfSpeedingCamera) / slowCamera);
+            (diffBetweenPlayerAndPositionVector + endOfSpeedingCamera) / slowCamera);
     }
 
 }

@@ -20,8 +20,6 @@ namespace CrossyMine
 
         [SerializeField, Tooltip("Forward speed")] float _forwardSpeed = 1f;
 
-        [SerializeField, Tooltip("Size of one squer in game")] float GridSize = 2f;
-
         Vector3Int _inputDir = Vector3Int.zero;
         bool _isJumping;
         Vector3 _nextPos;
@@ -69,7 +67,7 @@ namespace CrossyMine
 
         private void OnCollisionEnter(Collision collision)// Obstacle hit
         {
-            if (collision.gameObject.tag == Constants.obstacleTag)
+            if (collision.gameObject.tag == Constants.ObstacleTag)
             {
                 ReflectJump();
                 if (Obstacle != null) Obstacle();
@@ -84,14 +82,12 @@ namespace CrossyMine
         }
         private void StartMove(Vector3 direction)// Movement
         {
-          //  Debug.Log(Time.fixedTime -_lastTime);
-          //  _lastTime = Time.fixedTime;
             //Jump
             _rigidBody.AddForce(0f, _jumpForce, 0f);
 
             //Forward movemement
             Vector3 currentPos = _rigidBody.position;
-            _nextPos = currentPos + direction * GridSize;
+            _nextPos = currentPos + direction * Constants.GridSize;
 
             _isJumping = true;
 
