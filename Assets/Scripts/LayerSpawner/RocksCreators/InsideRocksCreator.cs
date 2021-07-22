@@ -4,51 +4,41 @@ using UnityEngine;
 
 namespace CrossyMine
 {
-    public class RockGeneratorOutput
-    {
-        public IEnumerable<bool> RockSpawnFlags => ShouldSpawnRocksRow;
-        private List<bool> ShouldSpawnRocksRow = new List<bool>();
-
-        public void Add(bool SpawnChance)
-        {
-            ShouldSpawnRocksRow.Add(SpawnChance);
-        }
-    }
-
     public class InsideRocksCreator : RocksCreator
     {
         [SerializeField, Tooltip("Chance to spawn rock 1:yournumber")] int _rockChance;
         public void CreateInsideRocks()
         {
             float _spawnPoint = -DistanceFromMidToSideRock + Constants.GridSize;
-            RockGeneratorOutput _listNumbers = ListWithRandomNumersToRandomRocks();
+            InsideRockGeneratorOutput _listNumbers = ListWithRandomNumersToRandomRocks();
             //Spawn random rocks
+
 
             foreach (var shouldSpawn in _listNumbers.RockSpawnFlags)
             {
-                if (!shouldSpawn)
-                    return;
-
-                GameObject _rock = InstantiateRandomRock();
-                _rock.transform.position = transform.position + new Vector3(_spawnPoint, 0.0f, 0.0f);
+                if (shouldSpawn)
+                {
+                    GameObject _rock = InstantiateRandomRock();
+                    _rock.transform.position = transform.position +
+                        new Vector3(_spawnPoint, 0.0f, 0.0f);
+                }
 
                 _spawnPoint += Constants.GridSize;
+                
+
             }
         }
 
         // Prepear list to spawn rocks
-        RockGeneratorOutput ListWithRandomNumersToRandomRocks()
+        InsideRockGeneratorOutput ListWithRandomNumersToRandomRocks()
         {
             int _fullRockCheck = 0;
-            RockGeneratorOutput RandomNumersForRocks = new RockGeneratorOutput();
+            InsideRockGeneratorOutput RandomNumersForRocks = new InsideRockGeneratorOutput();
 
-            // Make sure there is one empty square
-            var randomOpenSquareIndex = GetRandomOpenSquareIndex();
+            
 
             for (int i = 0; i < DistanceFromMidToSideRock - 1; i++)
             {
-                if (randomOpenSquareIndex == i)
-                    RandomNumersForRocks.Add(false);
 
                 if (ShouldLeaveOpenSquareRandom())
                     RandomNumersForRocks.Add(false);
@@ -59,6 +49,11 @@ namespace CrossyMine
                 }
             }
 
+            // Make sure there is one empty square
+            if (_fullRockCheck == DistanceFromMidToSideRock - 1)
+            {
+                RandomNumersForRocks.RemoveOneRandomRock((int)DistanceFromMidToSideRock);
+            }
             return RandomNumersForRocks;
         }
 
@@ -71,5 +66,7 @@ namespace CrossyMine
         {
             return Random.Range(0, (int)DistanceFromMidToSideRock - 1);
         }
+
+       
     }
 }

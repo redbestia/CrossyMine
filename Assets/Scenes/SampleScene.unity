@@ -4486,6 +4486,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6290168230041708791, guid: 4362c14c3ba18a143b99da2f3b2a0f08,
         type: 3}
+    - target: {fileID: -2996497351302726568, guid: 63168acb5ad2f3b428264ca163ca4c3d,
+        type: 3}
+      propertyPath: enemySpawnChance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1380242971920210500, guid: 63168acb5ad2f3b428264ca163ca4c3d,
+        type: 3}
+      propertyPath: _rockChance
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1380242971920210505, guid: 63168acb5ad2f3b428264ca163ca4c3d,
         type: 3}
       propertyPath: _camera

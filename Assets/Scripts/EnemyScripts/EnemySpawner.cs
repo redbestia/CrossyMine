@@ -29,7 +29,8 @@ public class EnemySpawner : MonoBehaviour
     {
          if (! (_enemy == null))
         {
-            if (_enemy.transform.position.x > -(_enemyMovement.spawnPoint - _randomDistance) && _enemy.transform.position.x<_enemyMovement.spawnPoint - _randomDistance)
+            if (_enemy.transform.position.x > -(_enemyMovement.spawnPoint - _randomDistance) && 
+                _enemy.transform.position.x<_enemyMovement.spawnPoint - _randomDistance)
             {
                 SpawntTheSameEnemy();
                  _randomDistance = RandomDistance();
@@ -49,7 +50,8 @@ public class EnemySpawner : MonoBehaviour
             if (_enemyMovement.spawnPoint * 2 > _sumRnadomDistance)
             {
                 GameObject enemy = Instantiate(_enemyToInstantite);
-                if (_enemyMovement._topOrDown) enemy.transform.position -= new Vector3(_sumRnadomDistance, 0, 0);
+                if (_enemyMovement._topOrDown) enemy.transform.position -= 
+                        new Vector3(_sumRnadomDistance, 0, 0);
                 else enemy.transform.position += new Vector3(_sumRnadomDistance, 0, 0);
                 enemy.SetActive(true);
             }
@@ -78,13 +80,16 @@ public class EnemySpawner : MonoBehaviour
         _enemyMovement = _enemy.GetComponent<EnemyMovement>();
         _enemyMovement._topOrDown = (0 == Random.Range(0, 2));
         _enemyMovement.ChooseDirecrionRotate();
-        if (_enemyMovement._topOrDown) _enemy.transform.position += new Vector3(_enemyMovement.spawnPoint, 0, transform.position.z);
-        else _enemy.transform.position += new Vector3(-_enemyMovement.spawnPoint, 0, transform.position.z);
+        if (_enemyMovement._topOrDown) _enemy.transform.position += 
+                new Vector3(_enemyMovement.spawnPoint, 0, transform.position.z);
+        else _enemy.transform.position += 
+                new Vector3(-_enemyMovement.spawnPoint, 0, transform.position.z);
     }
     void RandomizeEnemySpeed()
     {
         
-        _enemyMovement.speed = Random.Range(_enemyMovement.minEnemySpeed, _enemyMovement.maxEnemySpeed +1);
+        _enemyMovement.speed = 
+            Random.Range(_enemyMovement.minEnemySpeed, _enemyMovement.maxEnemySpeed +1);
         _enemy.SetActive(false);
         
     }
@@ -97,7 +102,8 @@ public class EnemySpawner : MonoBehaviour
     float RandomDistance()
     {
         float randomDistance;
-        randomDistance = Random.Range(_enemy.GetComponent<EnemyMovement>().minDistanc, _enemy.GetComponent<EnemyMovement>().maxDistanc);
+        randomDistance = Random.Range(_enemy.GetComponent<EnemyMovement>().
+            minDistanc, _enemy.GetComponent<EnemyMovement>().maxDistanc);
         return randomDistance;
     }
 }

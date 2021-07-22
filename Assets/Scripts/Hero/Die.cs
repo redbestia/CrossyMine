@@ -4,7 +4,7 @@ using UnityEngine;
 using CrossyMine;
 using System.IO;
 
-public class Die : MonoBehaviour
+public abstract class Die : MonoBehaviour
 {
     PlayerController _playerController;
     Canvas _canvas;
@@ -21,7 +21,8 @@ public class Die : MonoBehaviour
     {
         SaveScore();
         _canvas.enabled = true;
-        GameObject.FindGameObjectWithTag(Constants.StartButtonTag).GetComponent<GameStarter>().enabled = false;
+        GameObject.FindGameObjectWithTag(Constants.StartButtonTag).
+            GetComponent<GameStarter>().enabled = false;
         _playerController.enabled = false;
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<Rigidbody>().useGravity = false;
@@ -38,7 +39,8 @@ public class Die : MonoBehaviour
     void SaveScore()
     {
         StreamWriter _sw;
-        if (!File.Exists(Constants.ScoreBoardFileName)) _sw = File.CreateText(Constants.ScoreBoardFileName);
+        if (!File.Exists(Constants.ScoreBoardFileName)) _sw = File.
+                CreateText(Constants.ScoreBoardFileName);
         else _sw = new StreamWriter(Constants.ScoreBoardFileName, true);
         _sw.WriteLine(((((int)transform.position.z) / 2) - 2).ToString());
         _sw.Close();

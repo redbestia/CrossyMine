@@ -28,7 +28,6 @@ namespace CrossyMine
         SideRocksCreator _sideRockCreator;
         InsideRocksCreator _insideRocksCreator;
         OutsideRockCreator _outsideRockCreator;
-        EnemySpawner _enemySpawner;
         SpecialInsideRocksCreator _specialInsideRocksCreator;
         CreatorEnemySpawner _creatorEnemySpawner;
         SpawnerProceduralGenerationRandomizer _randomizer;
@@ -41,7 +40,6 @@ namespace CrossyMine
         {
             _sideRockCreator = GetComponent<SideRocksCreator>();
             _insideRocksCreator = GetComponent<InsideRocksCreator>();
-            _enemySpawner = GetComponent<EnemySpawner>();
             _specialInsideRocksCreator = GetComponent<SpecialInsideRocksCreator>();
             _outsideRockCreator = GetComponent<OutsideRockCreator>();
             _creatorEnemySpawner = GetComponent<CreatorEnemySpawner>();
