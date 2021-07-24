@@ -22,6 +22,7 @@ public class Score : MonoBehaviour
     void GetScoreDisplayIt()
     {
         _textMeshProUGUI.text = "Score: "
-            + ((((int)_player.transform.position.z) / 2) - 2).ToString();
+            + ((((int)_player.transform.position.z) / (int)Constants.GridSize) 
+            - (int)Constants.GridSize).ToString();
     }
 }

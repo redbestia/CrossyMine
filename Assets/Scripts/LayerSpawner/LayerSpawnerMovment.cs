@@ -54,7 +54,7 @@ namespace CrossyMine
         void SpawnMoveSpawner()
         {
             bool ShouldJumpSpawnerAsCameraApproaches() =>
-                transform.position.z < _camera.transform.position.z + _difBetwenSpawnerAndCamera;
+                transform.position.z < _camera.transform.position.z + _difBetwenSpawnerAndCamera ;
 
             if (ShouldJumpSpawnerAsCameraApproaches())
             {
