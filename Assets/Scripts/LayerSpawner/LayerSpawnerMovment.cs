@@ -21,7 +21,7 @@ namespace CrossyMine
 
     public class LayerSpawnerMovment : MonoBehaviour
     {
-
+        private const int SafeStartLeanght = 6;
         [SerializeField, Tooltip("Reference Camera")] private GameObject _camera;
         Vector3 _moveVector = new Vector3(0.0f, 0.0f, 2.0f);
         public float _difBetwenSpawnerAndCamera;
@@ -54,7 +54,8 @@ namespace CrossyMine
         void SpawnMoveSpawner()
         {
             bool ShouldJumpSpawnerAsCameraApproaches() =>
-                transform.position.z < _camera.transform.position.z + _difBetwenSpawnerAndCamera ;
+                transform.position.z < _camera.transform.position.z 
+                + _difBetwenSpawnerAndCamera ;
 
             if (ShouldJumpSpawnerAsCameraApproaches())
             {
@@ -68,22 +69,27 @@ namespace CrossyMine
 
         void SafeStartOrNoramlSpawn()
         {
-            if (_layerCounter <= 5)
+            if (_layerCounter <= SafeStartLeanght)
             {
                 _switchCase = LayerType.SideRocks;
                 return;
             }
 
-            if (_switchCase == LayerType.InsideRocks | _switchCase == LayerType.SpecialRocks)
+            if (_switchCase == LayerType.InsideRocks | _switchCase 
+                == LayerType.SpecialRocks)
             {
                 _previousSwitchCase = _switchCase;
-                _switchCase = _randomizer.RandomNumberToSwitchNumberWithoutInsideRocks();
+                _switchCase = _randomizer
+                    .RandomNumberToSwitchNumberWithoutInsideRocks();
             }
-            else if (_switchCase == LayerType.EnemyField & _previousSwitchCase == LayerType.InsideRocks ||
-                     _switchCase == LayerType.EnemyField & _previousSwitchCase == LayerType.SpecialRocks)
+            else if (_switchCase == LayerType.EnemyField 
+                     & _previousSwitchCase == LayerType.InsideRocks ||
+                     _switchCase == LayerType.EnemyField
+                     & _previousSwitchCase == LayerType.SpecialRocks)
             {
                 _previousSwitchCase = _switchCase;
-                _switchCase = _randomizer.RandomNumberToSwitchNumberWithSpecialRocks();
+                _switchCase = _randomizer
+                    .RandomNumberToSwitchNumberWithSpecialRocks();
             }
             else
             {
