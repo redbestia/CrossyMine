@@ -16,6 +16,7 @@ TagManager:
   - AudioHolder
   - EnemySpawner
   - StartButton
+  - MinimalizePause
   layers:
   - Default
   - TransparentFX

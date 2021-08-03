@@ -8,7 +8,6 @@ public class MinimalizePause : MonoBehaviour
     bool _ifChecker = false; //Dont want pasue at the start of the game
     private void OnApplicationFocus(bool focus)
     {
-        // Debug.Log("Pause " + _ifChecker);
         if (_ifChecker == true && focus == false)
         {
             GameObject.FindGameObjectWithTag(Constants.PauseMenuTag).

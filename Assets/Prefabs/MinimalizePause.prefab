@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5739046916995499899}
   m_Layer: 0
   m_Name: MinimalizePause
-  m_TagString: Untagged
+  m_TagString: MinimalizePause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
