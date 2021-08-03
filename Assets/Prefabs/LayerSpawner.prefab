@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1380242971920210506}
   - component: {fileID: 1380242971920210500}
   - component: {fileID: 1380242971920210501}
-  - component: {fileID: 1380242971920210502}
   - component: {fileID: -1987413379375280884}
   - component: {fileID: 7085486882695658320}
   - component: {fileID: -3212056495404901463}
@@ -118,18 +117,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed6e803b297c41346835270da3a7add5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1380242971920210502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380242971920210509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d1c112ac1a78b9439756f3d551c07b8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-1987413379375280884
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,4 +170,3 @@ MonoBehaviour:
   rockSpawnChance: 2
   enemySpawnChance: 4
   noRockSpawnChance: 1
-  _allChance: 0

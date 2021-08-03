@@ -14,16 +14,11 @@ namespace CrossyMine
         EnemyField
     }
 
-    public abstract class SpawnStrategy
-    {
-
-    }
-
     public class LayerSpawnerMovment : MonoBehaviour
     {
         private const int SafeStartLeanght = 6;
         [SerializeField, Tooltip("Reference Camera")] private GameObject _camera;
-        Vector3 _moveVector = new Vector3(0.0f, 0.0f, 2.0f);
+        Vector3 _moveVector = new Vector3(0.0f, 0.0f, Constants.GridSize);
         public float _difBetwenSpawnerAndCamera;
         SideRocksCreator _sideRockCreator;
         InsideRocksCreator _insideRocksCreator;
@@ -53,11 +48,11 @@ namespace CrossyMine
 
         void SpawnMoveSpawner()
         {
-            bool ShouldJumpSpawnerAsCameraApproaches() =>
+            bool ShouldJumpSpawnerAsCameraApproaches =
                 transform.position.z < _camera.transform.position.z 
                 + _difBetwenSpawnerAndCamera ;
 
-            if (ShouldJumpSpawnerAsCameraApproaches())
+            if (ShouldJumpSpawnerAsCameraApproaches)
             {
                 _randomizer.SumAllChance();
                 SafeStartOrNoramlSpawn();
@@ -98,7 +93,7 @@ namespace CrossyMine
             }
         }
 
-        void SwitchWhatLayerSpawn() // to strategy
+        void SwitchWhatLayerSpawn()
         {
             switch (_switchCase)
             {
