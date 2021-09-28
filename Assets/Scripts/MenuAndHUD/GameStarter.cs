@@ -4,6 +4,11 @@ using UnityEngine;
 using CrossyMine;
 public class GameStarter : MonoBehaviour
 {
+    [SerializeField] MoveButton _buttonUp;
+    [SerializeField] MoveButton _buttonDown;
+    [SerializeField] MoveButton _buttonRight;
+    [SerializeField] MoveButton _buttonLeft;
+
     int _ifChecker = 0; 
     private void Update()
     {
@@ -16,19 +21,28 @@ public class GameStarter : MonoBehaviour
 
     public void StartGame()
     {
-        GameObject.FindGameObjectWithTag(Constants.PlayerTag).GetComponent<PlayerController>().enabled = true;
-        GameObject.FindGameObjectWithTag(Constants.MainCameraTag).GetComponent<CameraMovment>().enabled = true;
-        GameObject.FindGameObjectWithTag(Constants.StartMenuTag).GetComponent<Canvas>().enabled = false;
-        GameObject.FindGameObjectWithTag(Constants.PauseMenuTag).GetComponent<Canvas>().enabled = false;
+        GameObject.FindGameObjectWithTag(Constants.PlayerTag)
+            .GetComponent<PlayerController>().enabled = true;
+        GameObject.FindGameObjectWithTag(Constants.MainCameraTag)
+            .GetComponent<CameraMovment>().enabled = true;
+        GameObject.FindGameObjectWithTag(Constants.StartMenuTag)
+            .GetComponent<Canvas>().enabled = false;
+        GameObject.FindGameObjectWithTag(Constants.PauseMenuTag)
+            .GetComponent<Canvas>().enabled = false;
         Time.timeScale = 1;
     }
 
     private bool IsInput()
     {
         return Input.GetKey(KeyCode.UpArrow)
-            | Input.GetKey(KeyCode.DownArrow)
-            | Input.GetKey(KeyCode.RightArrow)
-            | Input.GetKey(KeyCode.LeftArrow)
-            & _ifChecker == 0;
+            || Input.GetKey(KeyCode.DownArrow)
+            || Input.GetKey(KeyCode.RightArrow)
+            || Input.GetKey(KeyCode.LeftArrow)
+            || _buttonUp._ispressed
+            || _buttonDown._ispressed
+            || _buttonRight._ispressed
+            || _buttonLeft._ispressed
+            && _ifChecker == 0;
+
     }
 }

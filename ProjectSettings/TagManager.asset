@@ -17,6 +17,10 @@ TagManager:
   - EnemySpawner
   - StartButton
   - MinimalizePause
+  - ButtonUP
+  - ButtonRight
+  - ButtonDown
+  - ButtonLeft
   layers:
   - Default
   - TransparentFX

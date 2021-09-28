@@ -100,19 +100,19 @@ namespace CrossyMine
                 case LayerType.InsideRocks:
                     _insideRocksCreator.CreateInsideRocks();
                     _sideRockCreator.CreateSideRocks();
-                    _outsideRockCreator.CreateOutsideRocks();
+                    //_outsideRockCreator.CreateOutsideRocks();
                     break;
                 case LayerType.EnemyField:
                     _creatorEnemySpawner.CreateEnemySpawner();
                     break;
                 case LayerType.SideRocks:
                     _sideRockCreator.CreateSideRocks();
-                    _outsideRockCreator.CreateOutsideRocks();
+                    //_outsideRockCreator.CreateOutsideRocks();
                     break;
                 case LayerType.SpecialRocks:
                     _specialInsideRocksCreator.CreateSpecialInsideRocks();
                     _sideRockCreator.CreateSideRocks();
-                    _outsideRockCreator.CreateOutsideRocks();
+                    //_outsideRockCreator.CreateOutsideRocks();
                     break;
             }
         }

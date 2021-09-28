@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using CrossyMine;
-using System.IO;
+//using System.IO;
 
 public abstract class Die : MonoBehaviour
 {
@@ -19,7 +19,7 @@ public abstract class Die : MonoBehaviour
 
     public void PlayerDied()
     {
-        SaveScore();
+        //SaveScore();
         _canvas.enabled = true;
         GameObject.FindGameObjectWithTag(Constants.StartButtonTag).
             GetComponent<GameStarter>().enabled = false;
@@ -36,13 +36,13 @@ public abstract class Die : MonoBehaviour
 
     }
 
-    void SaveScore()
-    {
-        StreamWriter _sw;
-        if (!File.Exists(Constants.ScoreBoardFileName)) _sw = File.
-                CreateText(Constants.ScoreBoardFileName);
-        else _sw = new StreamWriter(Constants.ScoreBoardFileName, true);
-        _sw.WriteLine(((((int)transform.position.z) / 2) - 2).ToString());
-        _sw.Close();
-    }
+    //void SaveScore()
+    //{
+    //    StreamWriter _sw;
+    //    if (!File.Exists(Constants.ScoreBoardFileName)) _sw = File.
+    //            CreateText(Constants.ScoreBoardFileName);
+    //    else _sw = new StreamWriter(Constants.ScoreBoardFileName, true);
+    //    _sw.WriteLine(((((int)transform.position.z) / 2) - 2).ToString());
+    //    _sw.Close();
+    //}
 }
